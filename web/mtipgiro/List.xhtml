@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMtipgiroTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMtipgiroEmpty}" rendered="#{mtipgiroController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mtipgiroController.items.rowCount > 0}">
+                    <h:outputText value="#{mtipgiroController.pagination.pageFirstItem + 1}..#{mtipgiroController.pagination.pageLastItem + 1}/#{mtipgiroController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mtipgiroController.previous}" value="#{bundle.Previous} #{mtipgiroController.pagination.pageSize}" rendered="#{mtipgiroController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mtipgiroController.next}" value="#{bundle.Next} #{mtipgiroController.pagination.pageSize}" rendered="#{mtipgiroController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mtipgiroController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tipoGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_descGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.descGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_origenGir}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.origenGir}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tipDocaso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipDocaso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_indPagseg}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indPagseg}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_indAplarq}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.indAplarq}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tipDocing}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipDocing}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_desDocing}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.desDocing}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tipDocpag}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipDocpag}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_desDocpag}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.desDocpag}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tipDocdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipDocdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_desDocdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.desDocdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_claItemow}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.claItemow}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tarifaIni}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tarifaIni}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_estadoIni}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoIni}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_axsTps}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.axsTps}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMtipgiroTitle_tipDocow}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipDocow}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mtipgiroController.prepareView}" value="#{bundle.ListMtipgiroViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mtipgiroController.prepareEdit}" value="#{bundle.ListMtipgiroEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mtipgiroController.destroy}" value="#{bundle.ListMtipgiroDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mtipgiroController.prepareCreate}" value="#{bundle.ListMtipgiroCreateLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ListMtipgiroIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

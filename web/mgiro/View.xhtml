@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMgiroTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMgiroLabel_mgiroPK_sucRemite}"/>
+                    <h:outputText value="#{mgiroController.selected.mgiroPK.sucRemite}" title="#{bundle.ViewMgiroTitle_mgiroPK_sucRemite}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_mgiroPK_folioGiro}"/>
+                    <h:outputText value="#{mgiroController.selected.mgiroPK.folioGiro}" title="#{bundle.ViewMgiroTitle_mgiroPK_folioGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_folioComp}"/>
+                    <h:outputText value="#{mgiroController.selected.folioComp}" title="#{bundle.ViewMgiroTitle_folioComp}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_folioEgre}"/>
+                    <h:outputText value="#{mgiroController.selected.folioEgre}" title="#{bundle.ViewMgiroTitle_folioEgre}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_tipodoc}"/>
+                    <h:outputText value="#{mgiroController.selected.tipodoc}" title="#{bundle.ViewMgiroTitle_tipodoc}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_numedoc}"/>
+                    <h:outputText value="#{mgiroController.selected.numedoc}" title="#{bundle.ViewMgiroTitle_numedoc}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_rutdestina}"/>
+                    <h:outputText value="#{mgiroController.selected.rutdestina}" title="#{bundle.ViewMgiroTitle_rutdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_digdestina}"/>
+                    <h:outputText value="#{mgiroController.selected.digdestina}" title="#{bundle.ViewMgiroTitle_digdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_refdestina}"/>
+                    <h:outputText value="#{mgiroController.selected.refdestina}" title="#{bundle.ViewMgiroTitle_refdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_estadogiro}"/>
+                    <h:outputText value="#{mgiroController.selected.estadogiro}" title="#{bundle.ViewMgiroTitle_estadogiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_sucdestina}"/>
+                    <h:outputText value="#{mgiroController.selected.sucdestina}" title="#{bundle.ViewMgiroTitle_sucdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_sucPagdev}"/>
+                    <h:outputText value="#{mgiroController.selected.sucPagdev}" title="#{bundle.ViewMgiroTitle_sucPagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_rutRemite}"/>
+                    <h:outputText value="#{mgiroController.selected.rutRemite}" title="#{bundle.ViewMgiroTitle_rutRemite}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_digRemite}"/>
+                    <h:outputText value="#{mgiroController.selected.digRemite}" title="#{bundle.ViewMgiroTitle_digRemite}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_rutCajero}"/>
+                    <h:outputText value="#{mgiroController.selected.rutCajero}" title="#{bundle.ViewMgiroTitle_rutCajero}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_digCajero}"/>
+                    <h:outputText value="#{mgiroController.selected.digCajero}" title="#{bundle.ViewMgiroTitle_digCajero}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_rutcpagdev}"/>
+                    <h:outputText value="#{mgiroController.selected.rutcpagdev}" title="#{bundle.ViewMgiroTitle_rutcpagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_digcpagdev}"/>
+                    <h:outputText value="#{mgiroController.selected.digcpagdev}" title="#{bundle.ViewMgiroTitle_digcpagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_montoGiro}"/>
+                    <h:outputText value="#{mgiroController.selected.montoGiro}" title="#{bundle.ViewMgiroTitle_montoGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_codTarifa}"/>
+                    <h:outputText value="#{mgiroController.selected.codTarifa}" title="#{bundle.ViewMgiroTitle_codTarifa}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_coFiGiro}"/>
+                    <h:outputText value="#{mgiroController.selected.coFiGiro}" title="#{bundle.ViewMgiroTitle_coFiGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_codllamada}"/>
+                    <h:outputText value="#{mgiroController.selected.codllamada}" title="#{bundle.ViewMgiroTitle_codllamada}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_valorllama}"/>
+                    <h:outputText value="#{mgiroController.selected.valorllama}" title="#{bundle.ViewMgiroTitle_valorllama}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_montoTasa}"/>
+                    <h:outputText value="#{mgiroController.selected.montoTasa}" title="#{bundle.ViewMgiroTitle_montoTasa}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_fechaGiro}"/>
+                    <h:outputText value="#{mgiroController.selected.fechaGiro}" title="#{bundle.ViewMgiroTitle_fechaGiro}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_horaGiro}"/>
+                    <h:outputText value="#{mgiroController.selected.horaGiro}" title="#{bundle.ViewMgiroTitle_horaGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_fecPagdev}"/>
+                    <h:outputText value="#{mgiroController.selected.fecPagdev}" title="#{bundle.ViewMgiroTitle_fecPagdev}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_horPagdev}"/>
+                    <h:outputText value="#{mgiroController.selected.horPagdev}" title="#{bundle.ViewMgiroTitle_horPagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_observagir}"/>
+                    <h:outputText value="#{mgiroController.selected.observagir}" title="#{bundle.ViewMgiroTitle_observagir}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_tipoTrans}"/>
+                    <h:outputText value="#{mgiroController.selected.tipoTrans}" title="#{bundle.ViewMgiroTitle_tipoTrans}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_estaComu}"/>
+                    <h:outputText value="#{mgiroController.selected.estaComu}" title="#{bundle.ViewMgiroTitle_estaComu}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_ptjeGiros}"/>
+                    <h:outputText value="#{mgiroController.selected.ptjeGiros}" title="#{bundle.ViewMgiroTitle_ptjeGiros}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_iva}"/>
+                    <h:outputText value="#{mgiroController.selected.iva}" title="#{bundle.ViewMgiroTitle_iva}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_tipodop}"/>
+                    <h:outputText value="#{mgiroController.selected.tipodop}" title="#{bundle.ViewMgiroTitle_tipodop}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_numerocaja}"/>
+                    <h:outputText value="#{mgiroController.selected.numerocaja}" title="#{bundle.ViewMgiroTitle_numerocaja}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_pers}"/>
+                    <h:outputText value="#{mgiroController.selected.pers}" title="#{bundle.ViewMgiroTitle_pers}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_axsTps}"/>
+                    <h:outputText value="#{mgiroController.selected.axsTps}" title="#{bundle.ViewMgiroTitle_axsTps}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_ncajpagdev}"/>
+                    <h:outputText value="#{mgiroController.selected.ncajpagdev}" title="#{bundle.ViewMgiroTitle_ncajpagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_codItemow}"/>
+                    <h:outputText value="#{mgiroController.selected.codItemow}" title="#{bundle.ViewMgiroTitle_codItemow}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_codCcoow}"/>
+                    <h:outputText value="#{mgiroController.selected.codCcoow}" title="#{bundle.ViewMgiroTitle_codCcoow}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_codCiaow}"/>
+                    <h:outputText value="#{mgiroController.selected.codCiaow}" title="#{bundle.ViewMgiroTitle_codCiaow}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_estadoCon}"/>
+                    <h:outputText value="#{mgiroController.selected.estadoCon}" title="#{bundle.ViewMgiroTitle_estadoCon}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_tipRutdes}"/>
+                    <h:outputText value="#{mgiroController.selected.tipRutdes}" title="#{bundle.ViewMgiroTitle_tipRutdes}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_codmotdesb}"/>
+                    <h:outputText value="#{mgiroController.selected.codmotdesb}" title="#{bundle.ViewMgiroTitle_codmotdesb}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_tipoDesb}"/>
+                    <h:outputText value="#{mgiroController.selected.tipoDesb}" title="#{bundle.ViewMgiroTitle_tipoDesb}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_rutresdesb}"/>
+                    <h:outputText value="#{mgiroController.selected.rutresdesb}" title="#{bundle.ViewMgiroTitle_rutresdesb}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_digresdesb}"/>
+                    <h:outputText value="#{mgiroController.selected.digresdesb}" title="#{bundle.ViewMgiroTitle_digresdesb}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_fechaDesb}"/>
+                    <h:outputText value="#{mgiroController.selected.fechaDesb}" title="#{bundle.ViewMgiroTitle_fechaDesb}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_horaDesb}"/>
+                    <h:outputText value="#{mgiroController.selected.horaDesb}" title="#{bundle.ViewMgiroTitle_horaDesb}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_restoObsd}"/>
+                    <h:outputText value="#{mgiroController.selected.restoObsd}" title="#{bundle.ViewMgiroTitle_restoObsd}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_rutdescobg}"/>
+                    <h:outputText value="#{mgiroController.selected.rutdescobg}" title="#{bundle.ViewMgiroTitle_rutdescobg}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_digdescobg}"/>
+                    <h:outputText value="#{mgiroController.selected.digdescobg}" title="#{bundle.ViewMgiroTitle_digdescobg}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_nombre001}"/>
+                    <h:outputText value="#{mgiroController.selected.nombre001}" title="#{bundle.ViewMgiroTitle_nombre001}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_nombre002}"/>
+                    <h:outputText value="#{mgiroController.selected.nombre002}" title="#{bundle.ViewMgiroTitle_nombre002}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_apPat001}"/>
+                    <h:outputText value="#{mgiroController.selected.apPat001}" title="#{bundle.ViewMgiroTitle_apPat001}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_apMat002}"/>
+                    <h:outputText value="#{mgiroController.selected.apMat002}" title="#{bundle.ViewMgiroTitle_apMat002}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_telRed01}"/>
+                    <h:outputText value="#{mgiroController.selected.telRed01}" title="#{bundle.ViewMgiroTitle_telRed01}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_telCel01}"/>
+                    <h:outputText value="#{mgiroController.selected.telCel01}" title="#{bundle.ViewMgiroTitle_telCel01}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_prefijo}"/>
+                    <h:outputText value="#{mgiroController.selected.prefijo}" title="#{bundle.ViewMgiroTitle_prefijo}"/>
+                    <h:outputText value="#{bundle.ViewMgiroLabel_tipoGiro}"/>
+                    <h:outputText value="#{mgiroController.selected.tipoGiro}" title="#{bundle.ViewMgiroTitle_tipoGiro}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mgiroController.destroyAndView}" value="#{bundle.ViewMgiroDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewMgiroEditLink}"/>
+                <br />
+                <h:commandLink action="#{mgiroController.prepareCreate}" value="#{bundle.ViewMgiroCreateLink}" />
+                <br />
+                <h:commandLink action="#{mgiroController.prepareList}" value="#{bundle.ViewMgiroShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewMgiroIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

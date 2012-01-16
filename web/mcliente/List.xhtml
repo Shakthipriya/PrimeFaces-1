@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMclienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMclienteEmpty}" rendered="#{mclienteController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mclienteController.items.rowCount > 0}">
+                    <h:outputText value="#{mclienteController.pagination.pageFirstItem + 1}..#{mclienteController.pagination.pageLastItem + 1}/#{mclienteController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mclienteController.previous}" value="#{bundle.Previous} #{mclienteController.pagination.pageSize}" rendered="#{mclienteController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mclienteController.next}" value="#{bundle.Next} #{mclienteController.pagination.pageSize}" rendered="#{mclienteController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mclienteController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_rutcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rutcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_digcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.digcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_nombreclte}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreclte}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_appcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.appcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_apmcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.apmcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_dircliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dircliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_ciucliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ciucliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_comcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_telcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_telaboclte}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telaboclte}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_celcliente}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.celcliente}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_estBTarj}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estBTarj}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_desBTarj}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.desBTarj}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_EMailclte}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.EMailclte}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_sucOrigen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sucOrigen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_ptjeGiros}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ptjeGiros}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_cliedin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cliedin}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_tipoTrans}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoTrans}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_estaComu}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estaComu}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_datosclien}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datosclien}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_axsTps}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.axsTps}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMclienteTitle_prefijo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.prefijo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mclienteController.prepareView}" value="#{bundle.ListMclienteViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mclienteController.prepareEdit}" value="#{bundle.ListMclienteEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mclienteController.destroy}" value="#{bundle.ListMclienteDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mclienteController.prepareCreate}" value="#{bundle.ListMclienteCreateLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ListMclienteIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePerfilTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePerfilLabel_perCodigo}" for="perCodigo" />
+                    <h:inputText id="perCodigo" value="#{perfilController.selected.perCodigo}" title="#{bundle.CreatePerfilTitle_perCodigo}" required="true" requiredMessage="#{bundle.CreatePerfilRequiredMessage_perCodigo}"/>
+                    <h:outputLabel value="#{bundle.CreatePerfilLabel_perNombre}" for="perNombre" />
+                    <h:inputText id="perNombre" value="#{perfilController.selected.perNombre}" title="#{bundle.CreatePerfilTitle_perNombre}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{perfilController.create}" value="#{bundle.CreatePerfilSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{perfilController.prepareList}" value="#{bundle.CreatePerfilShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreatePerfilIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

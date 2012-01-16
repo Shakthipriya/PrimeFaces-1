@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link href="/resources/css/site.css" type="text/css" rel="stylesheet" />
+        
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel id="filtro" header="Giros Por Sucursal">
+                <p:messages/>
+            
+                <h:panelGrid columns="3">  
+                    <h:outputLabel for="nombre" value="Nombre: *"  class="label"/> 
+
+                    <p:inputText id="nombre" required="false"/>
+
+                    <p:commandButton value="Buscar" update="tblOpciones" actionListener="#{opcionController.fillOpciones()}"  /> 
+
+                </h:panelGrid>  
+            </p:panel>
+    
+    <p:dataTable var="opcion" value="#{opcionController.getLstOpciones()}"  
+                 paginator="true" rows="10"  
+                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                 rowsPerPageTemplate="5,10,15"
+                 id="tblOpciones"
+                 style="width:400px">  
+        <p:ajax event="rowEdit" update="@this" listener="#{opcionController.rowEditListener}"></p:ajax>
+        <f:facet name="header">  
+            Ajax Pagination  
+        </f:facet>  
+  
+        
+        <p:column headerText="Nombre">  
+            <p:cellEditor>  
+                <f:facet name="output">  
+                    <h:outputText value="#{opcion.opcNombre}" />  
+                </f:facet> 
+                <f:facet name="input">  
+                    <p:inputText value="#{opcion.opcNombre}" style="width:100%"/>  
+                </f:facet> 
+            </p:cellEditor>  
+        </p:column> 
+        <p:column headerText="Ruta" >  
+            <p:cellEditor>  
+                <f:facet name="output">  
+                    <h:outputText value="#{opcion.opcRuta}" />  
+                </f:facet>  
+                <f:facet name="input">  
+                    <p:inputText value="#{opcion.opcRuta}" style="width:100%"/>  
+                </f:facet> 
+            </p:cellEditor>  
+        </p:column> 
+        <p:column headerText="Acciones"  styleClass="ui-editable-column-options" >  
+            <p:rowEditor />  
+        </p:column> 
+                   
+    </p:dataTable>  
+   </h:form>
+        
+    </h:body>
+
+</html>

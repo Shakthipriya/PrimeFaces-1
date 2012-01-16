@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMgiroTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_mgiroPK_sucRemite}" for="mgiroPK_sucRemite" />
+                    <h:inputText id="mgiroPK_sucRemite" value="#{mgiroController.selected.mgiroPK.sucRemite}" title="#{bundle.EditMgiroTitle_mgiroPK_sucRemite}" required="true" requiredMessage="#{bundle.EditMgiroRequiredMessage_mgiroPK_sucRemite}"/>
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_mgiroPK_folioGiro}" for="mgiroPK_folioGiro" />
+                    <h:inputText id="mgiroPK_folioGiro" value="#{mgiroController.selected.mgiroPK.folioGiro}" title="#{bundle.EditMgiroTitle_mgiroPK_folioGiro}" required="true" requiredMessage="#{bundle.EditMgiroRequiredMessage_mgiroPK_folioGiro}"/>
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_folioComp}" for="folioComp" />
+                    <h:inputText id="folioComp" value="#{mgiroController.selected.folioComp}" title="#{bundle.EditMgiroTitle_folioComp}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_folioEgre}" for="folioEgre" />
+                    <h:inputText id="folioEgre" value="#{mgiroController.selected.folioEgre}" title="#{bundle.EditMgiroTitle_folioEgre}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_tipodoc}" for="tipodoc" />
+                    <h:inputText id="tipodoc" value="#{mgiroController.selected.tipodoc}" title="#{bundle.EditMgiroTitle_tipodoc}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_numedoc}" for="numedoc" />
+                    <h:inputText id="numedoc" value="#{mgiroController.selected.numedoc}" title="#{bundle.EditMgiroTitle_numedoc}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_rutdestina}" for="rutdestina" />
+                    <h:inputText id="rutdestina" value="#{mgiroController.selected.rutdestina}" title="#{bundle.EditMgiroTitle_rutdestina}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_digdestina}" for="digdestina" />
+                    <h:inputText id="digdestina" value="#{mgiroController.selected.digdestina}" title="#{bundle.EditMgiroTitle_digdestina}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_refdestina}" for="refdestina" />
+                    <h:inputText id="refdestina" value="#{mgiroController.selected.refdestina}" title="#{bundle.EditMgiroTitle_refdestina}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_estadogiro}" for="estadogiro" />
+                    <h:inputText id="estadogiro" value="#{mgiroController.selected.estadogiro}" title="#{bundle.EditMgiroTitle_estadogiro}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_sucdestina}" for="sucdestina" />
+                    <h:inputText id="sucdestina" value="#{mgiroController.selected.sucdestina}" title="#{bundle.EditMgiroTitle_sucdestina}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_sucPagdev}" for="sucPagdev" />
+                    <h:inputText id="sucPagdev" value="#{mgiroController.selected.sucPagdev}" title="#{bundle.EditMgiroTitle_sucPagdev}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_rutRemite}" for="rutRemite" />
+                    <h:inputText id="rutRemite" value="#{mgiroController.selected.rutRemite}" title="#{bundle.EditMgiroTitle_rutRemite}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_digRemite}" for="digRemite" />
+                    <h:inputText id="digRemite" value="#{mgiroController.selected.digRemite}" title="#{bundle.EditMgiroTitle_digRemite}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_rutCajero}" for="rutCajero" />
+                    <h:inputText id="rutCajero" value="#{mgiroController.selected.rutCajero}" title="#{bundle.EditMgiroTitle_rutCajero}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_digCajero}" for="digCajero" />
+                    <h:inputText id="digCajero" value="#{mgiroController.selected.digCajero}" title="#{bundle.EditMgiroTitle_digCajero}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_rutcpagdev}" for="rutcpagdev" />
+                    <h:inputText id="rutcpagdev" value="#{mgiroController.selected.rutcpagdev}" title="#{bundle.EditMgiroTitle_rutcpagdev}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_digcpagdev}" for="digcpagdev" />
+                    <h:inputText id="digcpagdev" value="#{mgiroController.selected.digcpagdev}" title="#{bundle.EditMgiroTitle_digcpagdev}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_montoGiro}" for="montoGiro" />
+                    <h:inputText id="montoGiro" value="#{mgiroController.selected.montoGiro}" title="#{bundle.EditMgiroTitle_montoGiro}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_codTarifa}" for="codTarifa" />
+                    <h:inputText id="codTarifa" value="#{mgiroController.selected.codTarifa}" title="#{bundle.EditMgiroTitle_codTarifa}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_coFiGiro}" for="coFiGiro" />
+                    <h:inputText id="coFiGiro" value="#{mgiroController.selected.coFiGiro}" title="#{bundle.EditMgiroTitle_coFiGiro}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_codllamada}" for="codllamada" />
+                    <h:inputText id="codllamada" value="#{mgiroController.selected.codllamada}" title="#{bundle.EditMgiroTitle_codllamada}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_valorllama}" for="valorllama" />
+                    <h:inputText id="valorllama" value="#{mgiroController.selected.valorllama}" title="#{bundle.EditMgiroTitle_valorllama}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_montoTasa}" for="montoTasa" />
+                    <h:inputText id="montoTasa" value="#{mgiroController.selected.montoTasa}" title="#{bundle.EditMgiroTitle_montoTasa}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_fechaGiro}" for="fechaGiro" />
+                    <h:inputText id="fechaGiro" value="#{mgiroController.selected.fechaGiro}" title="#{bundle.EditMgiroTitle_fechaGiro}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_horaGiro}" for="horaGiro" />
+                    <h:inputText id="horaGiro" value="#{mgiroController.selected.horaGiro}" title="#{bundle.EditMgiroTitle_horaGiro}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_fecPagdev}" for="fecPagdev" />
+                    <h:inputText id="fecPagdev" value="#{mgiroController.selected.fecPagdev}" title="#{bundle.EditMgiroTitle_fecPagdev}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_horPagdev}" for="horPagdev" />
+                    <h:inputText id="horPagdev" value="#{mgiroController.selected.horPagdev}" title="#{bundle.EditMgiroTitle_horPagdev}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_observagir}" for="observagir" />
+                    <h:inputText id="observagir" value="#{mgiroController.selected.observagir}" title="#{bundle.EditMgiroTitle_observagir}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_tipoTrans}" for="tipoTrans" />
+                    <h:inputText id="tipoTrans" value="#{mgiroController.selected.tipoTrans}" title="#{bundle.EditMgiroTitle_tipoTrans}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_estaComu}" for="estaComu" />
+                    <h:inputText id="estaComu" value="#{mgiroController.selected.estaComu}" title="#{bundle.EditMgiroTitle_estaComu}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_ptjeGiros}" for="ptjeGiros" />
+                    <h:inputText id="ptjeGiros" value="#{mgiroController.selected.ptjeGiros}" title="#{bundle.EditMgiroTitle_ptjeGiros}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_iva}" for="iva" />
+                    <h:inputText id="iva" value="#{mgiroController.selected.iva}" title="#{bundle.EditMgiroTitle_iva}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_tipodop}" for="tipodop" />
+                    <h:inputText id="tipodop" value="#{mgiroController.selected.tipodop}" title="#{bundle.EditMgiroTitle_tipodop}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_numerocaja}" for="numerocaja" />
+                    <h:inputText id="numerocaja" value="#{mgiroController.selected.numerocaja}" title="#{bundle.EditMgiroTitle_numerocaja}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_pers}" for="pers" />
+                    <h:inputText id="pers" value="#{mgiroController.selected.pers}" title="#{bundle.EditMgiroTitle_pers}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_axsTps}" for="axsTps" />
+                    <h:inputText id="axsTps" value="#{mgiroController.selected.axsTps}" title="#{bundle.EditMgiroTitle_axsTps}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_ncajpagdev}" for="ncajpagdev" />
+                    <h:inputText id="ncajpagdev" value="#{mgiroController.selected.ncajpagdev}" title="#{bundle.EditMgiroTitle_ncajpagdev}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_codItemow}" for="codItemow" />
+                    <h:inputText id="codItemow" value="#{mgiroController.selected.codItemow}" title="#{bundle.EditMgiroTitle_codItemow}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_codCcoow}" for="codCcoow" />
+                    <h:inputText id="codCcoow" value="#{mgiroController.selected.codCcoow}" title="#{bundle.EditMgiroTitle_codCcoow}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_codCiaow}" for="codCiaow" />
+                    <h:inputText id="codCiaow" value="#{mgiroController.selected.codCiaow}" title="#{bundle.EditMgiroTitle_codCiaow}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_estadoCon}" for="estadoCon" />
+                    <h:inputText id="estadoCon" value="#{mgiroController.selected.estadoCon}" title="#{bundle.EditMgiroTitle_estadoCon}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_tipRutdes}" for="tipRutdes" />
+                    <h:inputText id="tipRutdes" value="#{mgiroController.selected.tipRutdes}" title="#{bundle.EditMgiroTitle_tipRutdes}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_codmotdesb}" for="codmotdesb" />
+                    <h:inputText id="codmotdesb" value="#{mgiroController.selected.codmotdesb}" title="#{bundle.EditMgiroTitle_codmotdesb}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_tipoDesb}" for="tipoDesb" />
+                    <h:inputText id="tipoDesb" value="#{mgiroController.selected.tipoDesb}" title="#{bundle.EditMgiroTitle_tipoDesb}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_rutresdesb}" for="rutresdesb" />
+                    <h:inputText id="rutresdesb" value="#{mgiroController.selected.rutresdesb}" title="#{bundle.EditMgiroTitle_rutresdesb}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_digresdesb}" for="digresdesb" />
+                    <h:inputText id="digresdesb" value="#{mgiroController.selected.digresdesb}" title="#{bundle.EditMgiroTitle_digresdesb}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_fechaDesb}" for="fechaDesb" />
+                    <h:inputText id="fechaDesb" value="#{mgiroController.selected.fechaDesb}" title="#{bundle.EditMgiroTitle_fechaDesb}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_horaDesb}" for="horaDesb" />
+                    <h:inputText id="horaDesb" value="#{mgiroController.selected.horaDesb}" title="#{bundle.EditMgiroTitle_horaDesb}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_restoObsd}" for="restoObsd" />
+                    <h:inputText id="restoObsd" value="#{mgiroController.selected.restoObsd}" title="#{bundle.EditMgiroTitle_restoObsd}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_rutdescobg}" for="rutdescobg" />
+                    <h:inputText id="rutdescobg" value="#{mgiroController.selected.rutdescobg}" title="#{bundle.EditMgiroTitle_rutdescobg}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_digdescobg}" for="digdescobg" />
+                    <h:inputText id="digdescobg" value="#{mgiroController.selected.digdescobg}" title="#{bundle.EditMgiroTitle_digdescobg}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_nombre001}" for="nombre001" />
+                    <h:inputText id="nombre001" value="#{mgiroController.selected.nombre001}" title="#{bundle.EditMgiroTitle_nombre001}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_nombre002}" for="nombre002" />
+                    <h:inputText id="nombre002" value="#{mgiroController.selected.nombre002}" title="#{bundle.EditMgiroTitle_nombre002}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_apPat001}" for="apPat001" />
+                    <h:inputText id="apPat001" value="#{mgiroController.selected.apPat001}" title="#{bundle.EditMgiroTitle_apPat001}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_apMat002}" for="apMat002" />
+                    <h:inputText id="apMat002" value="#{mgiroController.selected.apMat002}" title="#{bundle.EditMgiroTitle_apMat002}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_telRed01}" for="telRed01" />
+                    <h:inputText id="telRed01" value="#{mgiroController.selected.telRed01}" title="#{bundle.EditMgiroTitle_telRed01}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_telCel01}" for="telCel01" />
+                    <h:inputText id="telCel01" value="#{mgiroController.selected.telCel01}" title="#{bundle.EditMgiroTitle_telCel01}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_prefijo}" for="prefijo" />
+                    <h:inputText id="prefijo" value="#{mgiroController.selected.prefijo}" title="#{bundle.EditMgiroTitle_prefijo}" />
+                    <h:outputLabel value="#{bundle.EditMgiroLabel_tipoGiro}" for="tipoGiro" />
+                    <h:selectOneMenu id="tipoGiro" value="#{mgiroController.selected.tipoGiro}" title="#{bundle.EditMgiroTitle_tipoGiro}" >
+                        <f:selectItems value="#{mtipgiroController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{mgiroController.update}" value="#{bundle.EditMgiroSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditMgiroViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{mgiroController.prepareList}" value="#{bundle.EditMgiroShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditMgiroIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

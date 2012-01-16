@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMusuariosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditMusuariosLabel_rutUsuario}" for="rutUsuario" />
+                    <h:inputText id="rutUsuario" value="#{musuariosController.selected.rutUsuario}" title="#{bundle.EditMusuariosTitle_rutUsuario}" required="true" requiredMessage="#{bundle.EditMusuariosRequiredMessage_rutUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditMusuariosLabel_nombreUsuario}" for="nombreUsuario" />
+                    <h:inputText id="nombreUsuario" value="#{musuariosController.selected.nombreUsuario}" title="#{bundle.EditMusuariosTitle_nombreUsuario}" />
+                    <h:outputLabel value="#{bundle.EditMusuariosLabel_emailUsuario}" for="emailUsuario" />
+                    <h:inputText id="emailUsuario" value="#{musuariosController.selected.emailUsuario}" title="#{bundle.EditMusuariosTitle_emailUsuario}" />
+                    <h:outputLabel value="#{bundle.EditMusuariosLabel_usuarioOracle}" for="usuarioOracle" />
+                    <h:inputText id="usuarioOracle" value="#{musuariosController.selected.usuarioOracle}" title="#{bundle.EditMusuariosTitle_usuarioOracle}" />
+                    <h:outputLabel value="#{bundle.EditMusuariosLabel_rolStfUsuario}" for="rolStfUsuario" />
+                    <h:inputText id="rolStfUsuario" value="#{musuariosController.selected.rolStfUsuario}" title="#{bundle.EditMusuariosTitle_rolStfUsuario}" />
+                </h:panelGrid>
+                <h:commandLink action="#{musuariosController.update}" value="#{bundle.EditMusuariosSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditMusuariosViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{musuariosController.prepareList}" value="#{bundle.EditMusuariosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditMusuariosIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

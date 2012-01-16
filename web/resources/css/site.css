@@ -1,0 +1,16 @@
+/* 
+    Document   : site
+    Created on : Jan 15, 2012, 8:35:46 PM
+    Author     : andres
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+.label{
+    
+    text-decoration-color: red;
+}
+

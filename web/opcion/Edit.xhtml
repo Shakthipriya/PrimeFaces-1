@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditOpcionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditOpcionLabel_opcionPK_funCodigo}" for="opcionPK_funCodigo" />
+                    <h:inputText id="opcionPK_funCodigo" value="#{opcionController.selected.opcionPK.funCodigo}" title="#{bundle.EditOpcionTitle_opcionPK_funCodigo}" required="true" requiredMessage="#{bundle.EditOpcionRequiredMessage_opcionPK_funCodigo}"/>
+                    <h:outputLabel value="#{bundle.EditOpcionLabel_opcionPK_opcCodigo}" for="opcionPK_opcCodigo" />
+                    <h:inputText id="opcionPK_opcCodigo" value="#{opcionController.selected.opcionPK.opcCodigo}" title="#{bundle.EditOpcionTitle_opcionPK_opcCodigo}" required="true" requiredMessage="#{bundle.EditOpcionRequiredMessage_opcionPK_opcCodigo}"/>
+                    <h:outputLabel value="#{bundle.EditOpcionLabel_opcNombre}" for="opcNombre" />
+                    <h:inputText id="opcNombre" value="#{opcionController.selected.opcNombre}" title="#{bundle.EditOpcionTitle_opcNombre}" />
+                    <h:outputLabel value="#{bundle.EditOpcionLabel_opcRuta}" for="opcRuta" />
+                    <h:inputText id="opcRuta" value="#{opcionController.selected.opcRuta}" title="#{bundle.EditOpcionTitle_opcRuta}" />
+                </h:panelGrid>
+                <h:commandLink action="#{opcionController.update}" value="#{bundle.EditOpcionSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditOpcionViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{opcionController.prepareList}" value="#{bundle.EditOpcionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditOpcionIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

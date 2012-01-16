@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMtipgiroTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tipoGiro}" for="tipoGiro" />
+                    <h:inputText id="tipoGiro" value="#{mtipgiroController.selected.tipoGiro}" title="#{bundle.CreateMtipgiroTitle_tipoGiro}" required="true" requiredMessage="#{bundle.CreateMtipgiroRequiredMessage_tipoGiro}"/>
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_descGiro}" for="descGiro" />
+                    <h:inputText id="descGiro" value="#{mtipgiroController.selected.descGiro}" title="#{bundle.CreateMtipgiroTitle_descGiro}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_origenGir}" for="origenGir" />
+                    <h:inputText id="origenGir" value="#{mtipgiroController.selected.origenGir}" title="#{bundle.CreateMtipgiroTitle_origenGir}" required="true" requiredMessage="#{bundle.CreateMtipgiroRequiredMessage_origenGir}"/>
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tipDocaso}" for="tipDocaso" />
+                    <h:inputText id="tipDocaso" value="#{mtipgiroController.selected.tipDocaso}" title="#{bundle.CreateMtipgiroTitle_tipDocaso}" required="true" requiredMessage="#{bundle.CreateMtipgiroRequiredMessage_tipDocaso}"/>
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_indPagseg}" for="indPagseg" />
+                    <h:inputText id="indPagseg" value="#{mtipgiroController.selected.indPagseg}" title="#{bundle.CreateMtipgiroTitle_indPagseg}" required="true" requiredMessage="#{bundle.CreateMtipgiroRequiredMessage_indPagseg}"/>
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_indAplarq}" for="indAplarq" />
+                    <h:inputText id="indAplarq" value="#{mtipgiroController.selected.indAplarq}" title="#{bundle.CreateMtipgiroTitle_indAplarq}" required="true" requiredMessage="#{bundle.CreateMtipgiroRequiredMessage_indAplarq}"/>
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tipDocing}" for="tipDocing" />
+                    <h:inputText id="tipDocing" value="#{mtipgiroController.selected.tipDocing}" title="#{bundle.CreateMtipgiroTitle_tipDocing}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_desDocing}" for="desDocing" />
+                    <h:inputText id="desDocing" value="#{mtipgiroController.selected.desDocing}" title="#{bundle.CreateMtipgiroTitle_desDocing}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tipDocpag}" for="tipDocpag" />
+                    <h:inputText id="tipDocpag" value="#{mtipgiroController.selected.tipDocpag}" title="#{bundle.CreateMtipgiroTitle_tipDocpag}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_desDocpag}" for="desDocpag" />
+                    <h:inputText id="desDocpag" value="#{mtipgiroController.selected.desDocpag}" title="#{bundle.CreateMtipgiroTitle_desDocpag}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tipDocdev}" for="tipDocdev" />
+                    <h:inputText id="tipDocdev" value="#{mtipgiroController.selected.tipDocdev}" title="#{bundle.CreateMtipgiroTitle_tipDocdev}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_desDocdev}" for="desDocdev" />
+                    <h:inputText id="desDocdev" value="#{mtipgiroController.selected.desDocdev}" title="#{bundle.CreateMtipgiroTitle_desDocdev}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_claItemow}" for="claItemow" />
+                    <h:inputText id="claItemow" value="#{mtipgiroController.selected.claItemow}" title="#{bundle.CreateMtipgiroTitle_claItemow}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tarifaIni}" for="tarifaIni" />
+                    <h:inputText id="tarifaIni" value="#{mtipgiroController.selected.tarifaIni}" title="#{bundle.CreateMtipgiroTitle_tarifaIni}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_estadoIni}" for="estadoIni" />
+                    <h:inputText id="estadoIni" value="#{mtipgiroController.selected.estadoIni}" title="#{bundle.CreateMtipgiroTitle_estadoIni}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_axsTps}" for="axsTps" />
+                    <h:inputText id="axsTps" value="#{mtipgiroController.selected.axsTps}" title="#{bundle.CreateMtipgiroTitle_axsTps}" />
+                    <h:outputLabel value="#{bundle.CreateMtipgiroLabel_tipDocow}" for="tipDocow" />
+                    <h:inputText id="tipDocow" value="#{mtipgiroController.selected.tipDocow}" title="#{bundle.CreateMtipgiroTitle_tipDocow}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mtipgiroController.create}" value="#{bundle.CreateMtipgiroSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mtipgiroController.prepareList}" value="#{bundle.CreateMtipgiroShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateMtipgiroIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

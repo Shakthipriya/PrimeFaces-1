@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    <application>
+        <resource-bundle>
+            <base-name>/resources/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+	       <from-action>#{persoController.validaPass}
+        </from-action>
+	       <from-outcome>true</from-outcome>
+	       <to-view-id>/Remitente/Remitente1.jsf?faces-redirect=true</to-view-id>
+		</navigation-case>
+		<navigation-case>
+	<from-action>#{persoController.validaPass}</from-action>
+	<from-outcome>false</from-outcome>
+			<to-view-id>/Destinatario/Destinatario.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+    <navigation-rule>
+		<from-view-id>/login2.xhtml</from-view-id>
+		<navigation-case>
+	       <from-action>#{persoController.validaPass}
+        </from-action>
+	       <from-outcome>true</from-outcome>
+	       <to-view-id>/Remitente/Remitente1.jsf?faces-redirect=true</to-view-id>
+		</navigation-case>
+		<navigation-case>
+	<from-action>#{persoController.validaPass}</from-action>
+	<from-outcome>false</from-outcome>
+			<to-view-id>/Destinatario/Destinatario.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>    
+   <navigation-rule>
+		<from-view-id>/Remitente/Remitente1.xhtml</from-view-id>
+		<navigation-case>
+	       <from-action>#{persoController.cerrarSesion}
+        </from-action>
+	       <from-outcome>true</from-outcome>
+	       <to-view-id>/login2.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+	<from-action>#{persoController.cerrarSesion}</from-action>
+	<from-outcome>false</from-outcome>
+			<to-view-id>/login2.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+        
+        
+</faces-config>

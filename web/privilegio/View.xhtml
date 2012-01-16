@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPrivilegioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPrivilegioLabel_privilegioPK_perCodigo}"/>
+                    <h:outputText value="#{privilegioController.selected.privilegioPK.perCodigo}" title="#{bundle.ViewPrivilegioTitle_privilegioPK_perCodigo}"/>
+                    <h:outputText value="#{bundle.ViewPrivilegioLabel_privilegioPK_opcCodigo}"/>
+                    <h:outputText value="#{privilegioController.selected.privilegioPK.opcCodigo}" title="#{bundle.ViewPrivilegioTitle_privilegioPK_opcCodigo}"/>
+                    <h:outputText value="#{bundle.ViewPrivilegioLabel_privilegioPK_funCodigo}"/>
+                    <h:outputText value="#{privilegioController.selected.privilegioPK.funCodigo}" title="#{bundle.ViewPrivilegioTitle_privilegioPK_funCodigo}"/>
+                    <h:outputText value="#{bundle.ViewPrivilegioLabel_priEstado}"/>
+                    <h:outputText value="#{privilegioController.selected.priEstado}" title="#{bundle.ViewPrivilegioTitle_priEstado}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{privilegioController.destroyAndView}" value="#{bundle.ViewPrivilegioDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewPrivilegioEditLink}"/>
+                <br />
+                <h:commandLink action="#{privilegioController.prepareCreate}" value="#{bundle.ViewPrivilegioCreateLink}" />
+                <br />
+                <h:commandLink action="#{privilegioController.prepareList}" value="#{bundle.ViewPrivilegioShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewPrivilegioIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

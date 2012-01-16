@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMgiroHistoricoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMgiroHistoricoEmpty}" rendered="#{mgiroHistoricoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{mgiroHistoricoController.items.rowCount > 0}">
+                    <h:outputText value="#{mgiroHistoricoController.pagination.pageFirstItem + 1}..#{mgiroHistoricoController.pagination.pageLastItem + 1}/#{mgiroHistoricoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{mgiroHistoricoController.previous}" value="#{bundle.Previous} #{mgiroHistoricoController.pagination.pageSize}" rendered="#{mgiroHistoricoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{mgiroHistoricoController.next}" value="#{bundle.Next} #{mgiroHistoricoController.pagination.pageSize}" rendered="#{mgiroHistoricoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{mgiroHistoricoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_mgiroHistoricoPK_sucRemite}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mgiroHistoricoPK.sucRemite}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_mgiroHistoricoPK_folioGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mgiroHistoricoPK.folioGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_folioComp}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.folioComp}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_folioEgre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.folioEgre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_tipodoc}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipodoc}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_numedoc}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numedoc}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_rutdestina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rutdestina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_digdestina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.digdestina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_refdestina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.refdestina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_estadogiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadogiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_sucdestina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sucdestina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_sucPagdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.sucPagdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_rutRemite}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rutRemite}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_digRemite}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.digRemite}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_rutCajero}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rutCajero}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_digCajero}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.digCajero}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_rutcpagdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rutcpagdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_digcpagdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.digcpagdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_montoGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.montoGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_codTarifa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codTarifa}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_coFiGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.coFiGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_codllamada}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codllamada}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_valorllama}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.valorllama}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_montoTasa}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.montoTasa}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_fechaGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaGiro}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_horaGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horaGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_fecPagdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fecPagdev}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_horPagdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horPagdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_observagir}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.observagir}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_tipoTrans}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoTrans}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_estaComu}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estaComu}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_ptjeGiros}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ptjeGiros}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_iva}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.iva}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_tipodop}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipodop}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_numerocaja}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numerocaja}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_pers}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.pers}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_axsTps}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.axsTps}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_ncajpagdev}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ncajpagdev}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_codItemow}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codItemow}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_codCcoow}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codCcoow}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_codCiaow}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codCiaow}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_estadoCon}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoCon}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_tipRutdes}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipRutdes}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMgiroHistoricoTitle_tipoGiro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoGiro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{mgiroHistoricoController.prepareView}" value="#{bundle.ListMgiroHistoricoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mgiroHistoricoController.prepareEdit}" value="#{bundle.ListMgiroHistoricoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{mgiroHistoricoController.destroy}" value="#{bundle.ListMgiroHistoricoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{mgiroHistoricoController.prepareCreate}" value="#{bundle.ListMgiroHistoricoCreateLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ListMgiroHistoricoIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

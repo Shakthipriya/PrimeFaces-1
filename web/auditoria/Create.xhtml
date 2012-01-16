@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAuditoriaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_audRuta}" for="audRuta" />
+                    <h:inputText id="audRuta" value="#{auditoriaController.selected.audRuta}" title="#{bundle.CreateAuditoriaTitle_audRuta}" />
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_audParametro}" for="audParametro" />
+                    <h:inputText id="audParametro" value="#{auditoriaController.selected.audParametro}" title="#{bundle.CreateAuditoriaTitle_audParametro}" />
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_audFecha}" for="audFecha" />
+                    <h:inputText id="audFecha" value="#{auditoriaController.selected.audFecha}" title="#{bundle.CreateAuditoriaTitle_audFecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_audCodigo}" for="audCodigo" />
+                    <h:inputText id="audCodigo" value="#{auditoriaController.selected.audCodigo}" title="#{bundle.CreateAuditoriaTitle_audCodigo}" required="true" requiredMessage="#{bundle.CreateAuditoriaRequiredMessage_audCodigo}"/>
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_perCodigo}" for="perCodigo" />
+                    <h:inputText id="perCodigo" value="#{auditoriaController.selected.perCodigo}" title="#{bundle.CreateAuditoriaTitle_perCodigo}" required="true" requiredMessage="#{bundle.CreateAuditoriaRequiredMessage_perCodigo}"/>
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_opcCodigo}" for="opcCodigo" />
+                    <h:inputText id="opcCodigo" value="#{auditoriaController.selected.opcCodigo}" title="#{bundle.CreateAuditoriaTitle_opcCodigo}" required="true" requiredMessage="#{bundle.CreateAuditoriaRequiredMessage_opcCodigo}"/>
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_funCodigo}" for="funCodigo" />
+                    <h:inputText id="funCodigo" value="#{auditoriaController.selected.funCodigo}" title="#{bundle.CreateAuditoriaTitle_funCodigo}" required="true" requiredMessage="#{bundle.CreateAuditoriaRequiredMessage_funCodigo}"/>
+                    <h:outputLabel value="#{bundle.CreateAuditoriaLabel_usuCodigo}" for="usuCodigo" />
+                    <h:inputText id="usuCodigo" value="#{auditoriaController.selected.usuCodigo}" title="#{bundle.CreateAuditoriaTitle_usuCodigo}" required="true" requiredMessage="#{bundle.CreateAuditoriaRequiredMessage_usuCodigo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{auditoriaController.create}" value="#{bundle.CreateAuditoriaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{auditoriaController.prepareList}" value="#{bundle.CreateAuditoriaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateAuditoriaIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

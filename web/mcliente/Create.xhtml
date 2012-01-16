@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateMclienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_rutcliente}" for="rutcliente" />
+                    <h:inputText id="rutcliente" value="#{mclienteController.selected.rutcliente}" title="#{bundle.CreateMclienteTitle_rutcliente}" required="true" requiredMessage="#{bundle.CreateMclienteRequiredMessage_rutcliente}"/>
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_digcliente}" for="digcliente" />
+                    <h:inputText id="digcliente" value="#{mclienteController.selected.digcliente}" title="#{bundle.CreateMclienteTitle_digcliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_nombreclte}" for="nombreclte" />
+                    <h:inputText id="nombreclte" value="#{mclienteController.selected.nombreclte}" title="#{bundle.CreateMclienteTitle_nombreclte}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_appcliente}" for="appcliente" />
+                    <h:inputText id="appcliente" value="#{mclienteController.selected.appcliente}" title="#{bundle.CreateMclienteTitle_appcliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_apmcliente}" for="apmcliente" />
+                    <h:inputText id="apmcliente" value="#{mclienteController.selected.apmcliente}" title="#{bundle.CreateMclienteTitle_apmcliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_dircliente}" for="dircliente" />
+                    <h:inputText id="dircliente" value="#{mclienteController.selected.dircliente}" title="#{bundle.CreateMclienteTitle_dircliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_ciucliente}" for="ciucliente" />
+                    <h:inputText id="ciucliente" value="#{mclienteController.selected.ciucliente}" title="#{bundle.CreateMclienteTitle_ciucliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_comcliente}" for="comcliente" />
+                    <h:inputText id="comcliente" value="#{mclienteController.selected.comcliente}" title="#{bundle.CreateMclienteTitle_comcliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_telcliente}" for="telcliente" />
+                    <h:inputText id="telcliente" value="#{mclienteController.selected.telcliente}" title="#{bundle.CreateMclienteTitle_telcliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_telaboclte}" for="telaboclte" />
+                    <h:inputText id="telaboclte" value="#{mclienteController.selected.telaboclte}" title="#{bundle.CreateMclienteTitle_telaboclte}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_celcliente}" for="celcliente" />
+                    <h:inputText id="celcliente" value="#{mclienteController.selected.celcliente}" title="#{bundle.CreateMclienteTitle_celcliente}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_estBTarj}" for="estBTarj" />
+                    <h:inputText id="estBTarj" value="#{mclienteController.selected.estBTarj}" title="#{bundle.CreateMclienteTitle_estBTarj}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_desBTarj}" for="desBTarj" />
+                    <h:inputText id="desBTarj" value="#{mclienteController.selected.desBTarj}" title="#{bundle.CreateMclienteTitle_desBTarj}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_EMailclte}" for="EMailclte" />
+                    <h:inputText id="EMailclte" value="#{mclienteController.selected.EMailclte}" title="#{bundle.CreateMclienteTitle_EMailclte}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_sucOrigen}" for="sucOrigen" />
+                    <h:inputText id="sucOrigen" value="#{mclienteController.selected.sucOrigen}" title="#{bundle.CreateMclienteTitle_sucOrigen}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_ptjeGiros}" for="ptjeGiros" />
+                    <h:inputText id="ptjeGiros" value="#{mclienteController.selected.ptjeGiros}" title="#{bundle.CreateMclienteTitle_ptjeGiros}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_cliedin}" for="cliedin" />
+                    <h:inputText id="cliedin" value="#{mclienteController.selected.cliedin}" title="#{bundle.CreateMclienteTitle_cliedin}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_tipoTrans}" for="tipoTrans" />
+                    <h:inputText id="tipoTrans" value="#{mclienteController.selected.tipoTrans}" title="#{bundle.CreateMclienteTitle_tipoTrans}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_estaComu}" for="estaComu" />
+                    <h:inputText id="estaComu" value="#{mclienteController.selected.estaComu}" title="#{bundle.CreateMclienteTitle_estaComu}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_datosclien}" for="datosclien" />
+                    <h:inputText id="datosclien" value="#{mclienteController.selected.datosclien}" title="#{bundle.CreateMclienteTitle_datosclien}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_axsTps}" for="axsTps" />
+                    <h:inputText id="axsTps" value="#{mclienteController.selected.axsTps}" title="#{bundle.CreateMclienteTitle_axsTps}" />
+                    <h:outputLabel value="#{bundle.CreateMclienteLabel_prefijo}" for="prefijo" />
+                    <h:inputText id="prefijo" value="#{mclienteController.selected.prefijo}" title="#{bundle.CreateMclienteTitle_prefijo}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mclienteController.create}" value="#{bundle.CreateMclienteSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{mclienteController.prepareList}" value="#{bundle.CreateMclienteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateMclienteIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

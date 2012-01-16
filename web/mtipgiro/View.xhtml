@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMtipgiroTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tipoGiro}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tipoGiro}" title="#{bundle.ViewMtipgiroTitle_tipoGiro}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_descGiro}"/>
+                    <h:outputText value="#{mtipgiroController.selected.descGiro}" title="#{bundle.ViewMtipgiroTitle_descGiro}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_origenGir}"/>
+                    <h:outputText value="#{mtipgiroController.selected.origenGir}" title="#{bundle.ViewMtipgiroTitle_origenGir}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tipDocaso}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tipDocaso}" title="#{bundle.ViewMtipgiroTitle_tipDocaso}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_indPagseg}"/>
+                    <h:outputText value="#{mtipgiroController.selected.indPagseg}" title="#{bundle.ViewMtipgiroTitle_indPagseg}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_indAplarq}"/>
+                    <h:outputText value="#{mtipgiroController.selected.indAplarq}" title="#{bundle.ViewMtipgiroTitle_indAplarq}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tipDocing}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tipDocing}" title="#{bundle.ViewMtipgiroTitle_tipDocing}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_desDocing}"/>
+                    <h:outputText value="#{mtipgiroController.selected.desDocing}" title="#{bundle.ViewMtipgiroTitle_desDocing}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tipDocpag}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tipDocpag}" title="#{bundle.ViewMtipgiroTitle_tipDocpag}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_desDocpag}"/>
+                    <h:outputText value="#{mtipgiroController.selected.desDocpag}" title="#{bundle.ViewMtipgiroTitle_desDocpag}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tipDocdev}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tipDocdev}" title="#{bundle.ViewMtipgiroTitle_tipDocdev}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_desDocdev}"/>
+                    <h:outputText value="#{mtipgiroController.selected.desDocdev}" title="#{bundle.ViewMtipgiroTitle_desDocdev}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_claItemow}"/>
+                    <h:outputText value="#{mtipgiroController.selected.claItemow}" title="#{bundle.ViewMtipgiroTitle_claItemow}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tarifaIni}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tarifaIni}" title="#{bundle.ViewMtipgiroTitle_tarifaIni}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_estadoIni}"/>
+                    <h:outputText value="#{mtipgiroController.selected.estadoIni}" title="#{bundle.ViewMtipgiroTitle_estadoIni}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_axsTps}"/>
+                    <h:outputText value="#{mtipgiroController.selected.axsTps}" title="#{bundle.ViewMtipgiroTitle_axsTps}"/>
+                    <h:outputText value="#{bundle.ViewMtipgiroLabel_tipDocow}"/>
+                    <h:outputText value="#{mtipgiroController.selected.tipDocow}" title="#{bundle.ViewMtipgiroTitle_tipDocow}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mtipgiroController.destroyAndView}" value="#{bundle.ViewMtipgiroDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewMtipgiroEditLink}"/>
+                <br />
+                <h:commandLink action="#{mtipgiroController.prepareCreate}" value="#{bundle.ViewMtipgiroCreateLink}" />
+                <br />
+                <h:commandLink action="#{mtipgiroController.prepareList}" value="#{bundle.ViewMtipgiroShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewMtipgiroIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

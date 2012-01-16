@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMgiroHistoricoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_mgiroHistoricoPK_folioGiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.mgiroHistoricoPK.folioGiro}" title="#{bundle.ViewMgiroHistoricoTitle_mgiroHistoricoPK_folioGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_mgiroHistoricoPK_sucRemite}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.mgiroHistoricoPK.sucRemite}" title="#{bundle.ViewMgiroHistoricoTitle_mgiroHistoricoPK_sucRemite}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_folioComp}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.folioComp}" title="#{bundle.ViewMgiroHistoricoTitle_folioComp}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_folioEgre}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.folioEgre}" title="#{bundle.ViewMgiroHistoricoTitle_folioEgre}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_tipodoc}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.tipodoc}" title="#{bundle.ViewMgiroHistoricoTitle_tipodoc}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_numedoc}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.numedoc}" title="#{bundle.ViewMgiroHistoricoTitle_numedoc}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_rutdestina}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.rutdestina}" title="#{bundle.ViewMgiroHistoricoTitle_rutdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_digdestina}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.digdestina}" title="#{bundle.ViewMgiroHistoricoTitle_digdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_refdestina}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.refdestina}" title="#{bundle.ViewMgiroHistoricoTitle_refdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_estadogiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.estadogiro}" title="#{bundle.ViewMgiroHistoricoTitle_estadogiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_sucdestina}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.sucdestina}" title="#{bundle.ViewMgiroHistoricoTitle_sucdestina}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_sucPagdev}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.sucPagdev}" title="#{bundle.ViewMgiroHistoricoTitle_sucPagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_rutRemite}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.rutRemite}" title="#{bundle.ViewMgiroHistoricoTitle_rutRemite}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_digRemite}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.digRemite}" title="#{bundle.ViewMgiroHistoricoTitle_digRemite}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_rutCajero}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.rutCajero}" title="#{bundle.ViewMgiroHistoricoTitle_rutCajero}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_digCajero}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.digCajero}" title="#{bundle.ViewMgiroHistoricoTitle_digCajero}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_rutcpagdev}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.rutcpagdev}" title="#{bundle.ViewMgiroHistoricoTitle_rutcpagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_digcpagdev}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.digcpagdev}" title="#{bundle.ViewMgiroHistoricoTitle_digcpagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_montoGiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.montoGiro}" title="#{bundle.ViewMgiroHistoricoTitle_montoGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_codTarifa}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.codTarifa}" title="#{bundle.ViewMgiroHistoricoTitle_codTarifa}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_coFiGiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.coFiGiro}" title="#{bundle.ViewMgiroHistoricoTitle_coFiGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_codllamada}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.codllamada}" title="#{bundle.ViewMgiroHistoricoTitle_codllamada}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_valorllama}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.valorllama}" title="#{bundle.ViewMgiroHistoricoTitle_valorllama}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_montoTasa}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.montoTasa}" title="#{bundle.ViewMgiroHistoricoTitle_montoTasa}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_fechaGiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.fechaGiro}" title="#{bundle.ViewMgiroHistoricoTitle_fechaGiro}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_horaGiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.horaGiro}" title="#{bundle.ViewMgiroHistoricoTitle_horaGiro}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_fecPagdev}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.fecPagdev}" title="#{bundle.ViewMgiroHistoricoTitle_fecPagdev}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_horPagdev}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.horPagdev}" title="#{bundle.ViewMgiroHistoricoTitle_horPagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_observagir}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.observagir}" title="#{bundle.ViewMgiroHistoricoTitle_observagir}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_tipoTrans}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.tipoTrans}" title="#{bundle.ViewMgiroHistoricoTitle_tipoTrans}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_estaComu}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.estaComu}" title="#{bundle.ViewMgiroHistoricoTitle_estaComu}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_ptjeGiros}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.ptjeGiros}" title="#{bundle.ViewMgiroHistoricoTitle_ptjeGiros}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_iva}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.iva}" title="#{bundle.ViewMgiroHistoricoTitle_iva}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_tipodop}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.tipodop}" title="#{bundle.ViewMgiroHistoricoTitle_tipodop}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_numerocaja}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.numerocaja}" title="#{bundle.ViewMgiroHistoricoTitle_numerocaja}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_pers}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.pers}" title="#{bundle.ViewMgiroHistoricoTitle_pers}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_axsTps}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.axsTps}" title="#{bundle.ViewMgiroHistoricoTitle_axsTps}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_ncajpagdev}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.ncajpagdev}" title="#{bundle.ViewMgiroHistoricoTitle_ncajpagdev}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_codItemow}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.codItemow}" title="#{bundle.ViewMgiroHistoricoTitle_codItemow}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_codCcoow}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.codCcoow}" title="#{bundle.ViewMgiroHistoricoTitle_codCcoow}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_codCiaow}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.codCiaow}" title="#{bundle.ViewMgiroHistoricoTitle_codCiaow}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_estadoCon}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.estadoCon}" title="#{bundle.ViewMgiroHistoricoTitle_estadoCon}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_tipRutdes}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.tipRutdes}" title="#{bundle.ViewMgiroHistoricoTitle_tipRutdes}"/>
+                    <h:outputText value="#{bundle.ViewMgiroHistoricoLabel_tipoGiro}"/>
+                    <h:outputText value="#{mgiroHistoricoController.selected.tipoGiro}" title="#{bundle.ViewMgiroHistoricoTitle_tipoGiro}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mgiroHistoricoController.destroyAndView}" value="#{bundle.ViewMgiroHistoricoDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewMgiroHistoricoEditLink}"/>
+                <br />
+                <h:commandLink action="#{mgiroHistoricoController.prepareCreate}" value="#{bundle.ViewMgiroHistoricoCreateLink}" />
+                <br />
+                <h:commandLink action="#{mgiroHistoricoController.prepareList}" value="#{bundle.ViewMgiroHistoricoShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewMgiroHistoricoIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

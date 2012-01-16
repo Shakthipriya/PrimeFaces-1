@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPrivilegioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPrivilegioLabel_privilegioPK_perCodigo}" for="privilegioPK_perCodigo" />
+                    <h:inputText id="privilegioPK_perCodigo" value="#{privilegioController.selected.privilegioPK.perCodigo}" title="#{bundle.EditPrivilegioTitle_privilegioPK_perCodigo}" required="true" requiredMessage="#{bundle.EditPrivilegioRequiredMessage_privilegioPK_perCodigo}"/>
+                    <h:outputLabel value="#{bundle.EditPrivilegioLabel_privilegioPK_opcCodigo}" for="privilegioPK_opcCodigo" />
+                    <h:inputText id="privilegioPK_opcCodigo" value="#{privilegioController.selected.privilegioPK.opcCodigo}" title="#{bundle.EditPrivilegioTitle_privilegioPK_opcCodigo}" required="true" requiredMessage="#{bundle.EditPrivilegioRequiredMessage_privilegioPK_opcCodigo}"/>
+                    <h:outputLabel value="#{bundle.EditPrivilegioLabel_privilegioPK_funCodigo}" for="privilegioPK_funCodigo" />
+                    <h:inputText id="privilegioPK_funCodigo" value="#{privilegioController.selected.privilegioPK.funCodigo}" title="#{bundle.EditPrivilegioTitle_privilegioPK_funCodigo}" required="true" requiredMessage="#{bundle.EditPrivilegioRequiredMessage_privilegioPK_funCodigo}"/>
+                    <h:outputLabel value="#{bundle.EditPrivilegioLabel_priEstado}" for="priEstado" />
+                    <h:inputText id="priEstado" value="#{privilegioController.selected.priEstado}" title="#{bundle.EditPrivilegioTitle_priEstado}" />
+                </h:panelGrid>
+                <h:commandLink action="#{privilegioController.update}" value="#{bundle.EditPrivilegioSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditPrivilegioViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{privilegioController.prepareList}" value="#{bundle.EditPrivilegioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditPrivilegioIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

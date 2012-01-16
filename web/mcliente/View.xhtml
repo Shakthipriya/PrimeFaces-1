@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMclienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMclienteLabel_rutcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.rutcliente}" title="#{bundle.ViewMclienteTitle_rutcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_digcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.digcliente}" title="#{bundle.ViewMclienteTitle_digcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_nombreclte}"/>
+                    <h:outputText value="#{mclienteController.selected.nombreclte}" title="#{bundle.ViewMclienteTitle_nombreclte}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_appcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.appcliente}" title="#{bundle.ViewMclienteTitle_appcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_apmcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.apmcliente}" title="#{bundle.ViewMclienteTitle_apmcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_dircliente}"/>
+                    <h:outputText value="#{mclienteController.selected.dircliente}" title="#{bundle.ViewMclienteTitle_dircliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_ciucliente}"/>
+                    <h:outputText value="#{mclienteController.selected.ciucliente}" title="#{bundle.ViewMclienteTitle_ciucliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_comcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.comcliente}" title="#{bundle.ViewMclienteTitle_comcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_telcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.telcliente}" title="#{bundle.ViewMclienteTitle_telcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_telaboclte}"/>
+                    <h:outputText value="#{mclienteController.selected.telaboclte}" title="#{bundle.ViewMclienteTitle_telaboclte}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_celcliente}"/>
+                    <h:outputText value="#{mclienteController.selected.celcliente}" title="#{bundle.ViewMclienteTitle_celcliente}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_estBTarj}"/>
+                    <h:outputText value="#{mclienteController.selected.estBTarj}" title="#{bundle.ViewMclienteTitle_estBTarj}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_desBTarj}"/>
+                    <h:outputText value="#{mclienteController.selected.desBTarj}" title="#{bundle.ViewMclienteTitle_desBTarj}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_EMailclte}"/>
+                    <h:outputText value="#{mclienteController.selected.EMailclte}" title="#{bundle.ViewMclienteTitle_EMailclte}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_sucOrigen}"/>
+                    <h:outputText value="#{mclienteController.selected.sucOrigen}" title="#{bundle.ViewMclienteTitle_sucOrigen}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_ptjeGiros}"/>
+                    <h:outputText value="#{mclienteController.selected.ptjeGiros}" title="#{bundle.ViewMclienteTitle_ptjeGiros}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_cliedin}"/>
+                    <h:outputText value="#{mclienteController.selected.cliedin}" title="#{bundle.ViewMclienteTitle_cliedin}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_tipoTrans}"/>
+                    <h:outputText value="#{mclienteController.selected.tipoTrans}" title="#{bundle.ViewMclienteTitle_tipoTrans}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_estaComu}"/>
+                    <h:outputText value="#{mclienteController.selected.estaComu}" title="#{bundle.ViewMclienteTitle_estaComu}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_datosclien}"/>
+                    <h:outputText value="#{mclienteController.selected.datosclien}" title="#{bundle.ViewMclienteTitle_datosclien}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_axsTps}"/>
+                    <h:outputText value="#{mclienteController.selected.axsTps}" title="#{bundle.ViewMclienteTitle_axsTps}"/>
+                    <h:outputText value="#{bundle.ViewMclienteLabel_prefijo}"/>
+                    <h:outputText value="#{mclienteController.selected.prefijo}" title="#{bundle.ViewMclienteTitle_prefijo}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{mclienteController.destroyAndView}" value="#{bundle.ViewMclienteDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewMclienteEditLink}"/>
+                <br />
+                <h:commandLink action="#{mclienteController.prepareCreate}" value="#{bundle.ViewMclienteCreateLink}" />
+                <br />
+                <h:commandLink action="#{mclienteController.prepareList}" value="#{bundle.ViewMclienteShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewMclienteIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

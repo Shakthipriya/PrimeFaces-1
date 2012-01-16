@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListPrivilegioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListPrivilegioEmpty}" rendered="#{privilegioController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{privilegioController.items.rowCount > 0}">
+                    <h:outputText value="#{privilegioController.pagination.pageFirstItem + 1}..#{privilegioController.pagination.pageLastItem + 1}/#{privilegioController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{privilegioController.previous}" value="#{bundle.Previous} #{privilegioController.pagination.pageSize}" rendered="#{privilegioController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{privilegioController.next}" value="#{bundle.Next} #{privilegioController.pagination.pageSize}" rendered="#{privilegioController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{privilegioController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPrivilegioTitle_privilegioPK_funCodigo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.privilegioPK.funCodigo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPrivilegioTitle_privilegioPK_opcCodigo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.privilegioPK.opcCodigo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPrivilegioTitle_privilegioPK_perCodigo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.privilegioPK.perCodigo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListPrivilegioTitle_priEstado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.priEstado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{privilegioController.prepareView}" value="#{bundle.ListPrivilegioViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{privilegioController.prepareEdit}" value="#{bundle.ListPrivilegioEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{privilegioController.destroy}" value="#{bundle.ListPrivilegioDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{privilegioController.prepareCreate}" value="#{bundle.ListPrivilegioCreateLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ListPrivilegioIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
